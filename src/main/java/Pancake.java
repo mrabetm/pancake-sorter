@@ -10,7 +10,7 @@ public class Pancake {
     }
 
     public double compareTo(Pancake toBeComparedPancake){
-        return Double.compare(toBeComparedPancake.getDiameter(), this.diameter);
+        return Double.compare(this.diameter, toBeComparedPancake.getDiameter());
     }
     public void setDiameter(double diameter) {
         this.diameter = diameter;
