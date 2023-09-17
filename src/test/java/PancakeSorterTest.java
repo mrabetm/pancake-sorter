@@ -20,10 +20,10 @@ public class PancakeSorterTest {
         pancakes = new ArrayList<>();
         pancakesSameDiameter = new ArrayList<>();
         pancakes25more = new ArrayList<>();
-//        for (int i = 0; i < 25; i++){
-//            pancakesSameDiameter.add(new Pancake(5.0));
-//            pancakes25more.add(new Pancake(random));
-//        }
+        for (int i = 0; i < 25; i++){
+            pancakesSameDiameter.add(new Pancake(5.0));
+            pancakes25more.add(new Pancake(random));
+        }
         pancakes.add(new Pancake(5.0));
         pancakes.add(new Pancake(6.0));
         pancakes.add(new Pancake(10.0));
@@ -45,7 +45,12 @@ public class PancakeSorterTest {
     }
     @Test
     void pancakeSorterShouldGiveCorrectOutput(){
-        assertEquals("15,10,6,5,4,3", pancakeSorter.sort(pancakes));
+        assertEquals("[Pancake: 15,0 diameter, " +
+                "Pancake: 10,0 diameter, " +
+                "Pancake: 6,0 diameter, " +
+                "Pancake: 5,0 diameter, " +
+                "Pancake: 4,0 diameter, " +
+                "Pancake: 3,0 diameter]", pancakeSorter.sort(pancakes));
     }
 
 }

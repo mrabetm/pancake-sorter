@@ -9,16 +9,16 @@ public class PancakeSorter {
     }
 
 
-    public String sort(List<Pancake> toBeSortedPancakes){
-        if (toBeSortedPancakes.isEmpty() && toBeSortedPancakes.size() > 25){
+    public String sort(List<Pancake> plate){
+        if (plate.isEmpty() && plate.size() > 25){
             return "unable to sort pancake stack";
         }
-        for (int i = toBeSortedPancakes.size(); i > 1; i--){
-            int indexOfLargestPancake = findIndexOfPancakeWithLargestRadius(toBeSortedPancakes, i);
+        for (int i = plate.size(); i > 1; i--){
+            int indexOfLargestPancake = findIndexOfPancakeWithLargestRadius(plate, i);
 
             if (indexOfLargestPancake != i - 1){
-                flipPancakeStack(toBeSortedPancakes, indexOfLargestPancake);
-                flipPancakeStack(toBeSortedPancakes, i - 1);
+                flipPancakeStack(plate, indexOfLargestPancake);
+                flipPancakeStack(plate, i - 1);
             }
         }
         return pancakes.toString();
