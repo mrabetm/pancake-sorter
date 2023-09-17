@@ -12,7 +12,6 @@ public class PancakeSorter {
     public PancakeSorter(List<Pancake> pancakes) {
         this.pancakes = pancakes;
     }
-
     /**
      * @param plate
      * @return the plate sorted from biggest to smallest pancake through pancake sorting
