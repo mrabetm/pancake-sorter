@@ -8,20 +8,24 @@ public class PancakeSorter {
         this.pancakes = pancakes;
     }
 
-    public void sort(List<Pancake> toBeSortedPancakes){
-        for (Pancake pancake : toBeSortedPancakes){
-            int pancakeWithLargestRadius = getLargestRadius(toBeSortedPancakes);
-            int currentPancake = toBeSortedPancakes.indexOf(pancake);
 
-            if (pancakeWithLargestRadius != currentPancake - 1){
-                flip(toBeSortedPancakes, pancakeWithLargestRadius);
-                flip(toBeSortedPancakes, currentPancake - 1);
+    public String sort(List<Pancake> toBeSortedPancakes){
+        if (toBeSortedPancakes.isEmpty() && toBeSortedPancakes.size() > 25){
+            return "unable to sort pancake stack";
+        }
+        for (int i = toBeSortedPancakes.size(); i > 1; i--){
+            int indexOfLargestPancake = findIndexOfPancakeWithLargestRadius(toBeSortedPancakes, i);
+
+            if (indexOfLargestPancake != i - 1){
+                flipPancakeStack(toBeSortedPancakes, indexOfLargestPancake);
+                flipPancakeStack(toBeSortedPancakes, i - 1);
             }
         }
+        return pancakes.toString();
     }
-    public void flip(List<Pancake> toBeSortedPancakes, int currentPos){
-        int start = 0;
 
+    public void flipPancakeStack(List<Pancake> toBeSortedPancakes, int currentPos){
+        int start = 0;
         while (start < currentPos){
             Collections.swap(toBeSortedPancakes, start, currentPos);
             start++;
@@ -29,12 +33,11 @@ public class PancakeSorter {
         }
     }
 
-    public int getLargestRadius(List<Pancake> toBeSortedPancakes){
+    public int findIndexOfPancakeWithLargestRadius(List<Pancake> toBeSortedPancakes, int currentIndex){
         int maxIndex = 0;
-        for (Pancake pancake : toBeSortedPancakes){
-            int currentPancakeIndex = toBeSortedPancakes.indexOf(pancake);
-            if (toBeSortedPancakes.get(currentPancakeIndex).compareTo(toBeSortedPancakes.get(maxIndex)) > 0){
-                maxIndex = currentPancakeIndex;
+        for (int i = 0; i < currentIndex; i++){
+            if (toBeSortedPancakes.get(i).compareTo(toBeSortedPancakes.get(maxIndex)) > 0){
+                maxIndex = i;
             }
         }
         return maxIndex;
