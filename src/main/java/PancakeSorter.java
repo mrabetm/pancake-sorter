@@ -1,6 +1,11 @@
 import java.util.Collections;
 import java.util.List;
 
+
+/**
+ * @Author Mortada M'Rabet
+ * Class for sorting pancakes
+ */
 public class PancakeSorter {
     private List<Pancake> pancakes;
 
@@ -8,7 +13,10 @@ public class PancakeSorter {
         this.pancakes = pancakes;
     }
 
-
+    /**
+     * @param plate
+     * @return the plate sorted from biggest to smallest pancake through pancake sorting
+     */
     public String sort(List<Pancake> plate){
         if (plate.isEmpty() && plate.size() > 25){
             return "unable to sort pancake stack";
@@ -21,22 +29,33 @@ public class PancakeSorter {
                 flipPancakeStack(plate, i - 1);
             }
         }
-        return pancakes.toString();
+        return plate.toString();
     }
 
-    public void flipPancakeStack(List<Pancake> toBeSortedPancakes, int currentPos){
+    /**
+     * @param pancakeStack
+     * @param currentIndex
+     *
+     * Flips the pancakes within the pancakeStack from the start to currentPosition
+     */
+    public void flipPancakeStack(List<Pancake> pancakeStack, int currentIndex){
         int start = 0;
-        while (start < currentPos){
-            Collections.swap(toBeSortedPancakes, start, currentPos);
+        while (start < currentIndex){
+            Collections.swap(pancakeStack, start, currentIndex);
             start++;
-            currentPos--;
+            currentIndex--;
         }
     }
 
-    public int findIndexOfPancakeWithLargestRadius(List<Pancake> toBeSortedPancakes, int currentIndex){
+    /**
+     * @param pancakeStack
+     * @param currentIndex
+     * @return the index of the pancake with the largest radius within the pancakeStack
+     */
+    public int findIndexOfPancakeWithLargestRadius(List<Pancake> pancakeStack, int currentIndex){
         int maxIndex = 0;
         for (int i = 0; i < currentIndex; i++){
-            if (toBeSortedPancakes.get(i).compareTo(toBeSortedPancakes.get(maxIndex)) > 0){
+            if (pancakeStack.get(i).compareTo(pancakeStack.get(maxIndex)) > 0){
                 maxIndex = i;
             }
         }
