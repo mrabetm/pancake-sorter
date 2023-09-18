@@ -6,13 +6,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * @Author Mortada M'Rabet
+ * This class represents a chef
+ */
 public class Chef {
-    final int MAXIMUM_AMOUNT_OF_PANCAKES_BAKED = 25;
-    final double MIN_RADIUS = 1.0;
-    final double MAX_RADIUS = 15.0;
+    private final int MAXIMUM_AMOUNT_OF_PANCAKES_BAKED = 25;
+    private final double MIN_RADIUS = 1.0;
+    private final double MAX_RADIUS = 15.0;
 
-    String name;
-    Boolean isSousChef;
+    private String name;
+    private Boolean isSousChef;
 
     public Chef(String name, Boolean isSousChef) {
         this.name = name;

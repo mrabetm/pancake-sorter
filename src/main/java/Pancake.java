@@ -1,3 +1,7 @@
+/**
+ * @Author Mortada M'Rabet
+ * This class represents a pancake
+ */
 public class Pancake {
     private double diameter;
 

@@ -3,8 +3,12 @@ import exceptions.ChefRoleException;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @Author Mortada M'Rabet
+ * Class meant to flip pancakes
+ */
 public class Spatula {
-    Chef chef;
+    private Chef chef;
 
     public Spatula(Chef chef) {
         this.chef = chef;
@@ -14,7 +18,7 @@ public class Spatula {
      * @param pancakeStack
      * @param currentIndex
      *
-     * Flips the pancakes within the pancakeStack from the start to currentPosition
+     * Flips the pancakes between the start of the pancakeStack to the currentIndex from the pancakeStack
      */
     public void flipPancakes(List<Pancake> pancakeStack, int currentIndex){
             int start = 0;
