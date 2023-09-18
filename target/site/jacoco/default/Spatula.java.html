@@ -13,7 +13,6 @@ public class Spatula {
 <span class="fc" id="L13">    public Spatula(Chef chef) {</span>
 <span class="fc" id="L14">        this.chef = chef;</span>
 <span class="fc" id="L15">    }</span>
-
     /**
      * @param pancakeStack
      * @param currentIndex
@@ -21,20 +20,20 @@ public class Spatula {
      * Flips the pancakes between the start of the pancakeStack to the currentIndex from the pancakeStack
      */
     public void flipPancakes(List&lt;Pancake&gt; pancakeStack, int currentIndex){
-<span class="fc" id="L24">            int start = 0;</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">            while (start &lt; currentIndex) {</span>
-<span class="fc" id="L26">                Collections.swap(pancakeStack, start, currentIndex);</span>
-<span class="fc" id="L27">                start++;</span>
-<span class="fc" id="L28">                currentIndex--;</span>
+<span class="fc" id="L23">            int start = 0;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            while (start &lt; currentIndex) {</span>
+<span class="fc" id="L25">                Collections.swap(pancakeStack, start, currentIndex);</span>
+<span class="fc" id="L26">                start++;</span>
+<span class="fc" id="L27">                currentIndex--;</span>
             }
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L29">    }</span>
 
     public Chef getChef() {
-<span class="nc" id="L33">        return chef;</span>
+<span class="nc" id="L32">        return chef;</span>
     }
 
     public void setChef(Chef chef) {
-<span class="nc" id="L37">        this.chef = chef;</span>
-<span class="nc" id="L38">    }</span>
+<span class="nc" id="L36">        this.chef = chef;</span>
+<span class="nc" id="L37">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

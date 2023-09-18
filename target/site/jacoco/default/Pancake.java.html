@@ -3,9 +3,9 @@
  * This class represents a pancake
  */
 public class Pancake {
-    private double diameter;
+    private int diameter;
 
-<span class="fc" id="L8">    public Pancake(double diameter) {</span>
+<span class="fc" id="L8">    public Pancake(int diameter) {</span>
 <span class="fc" id="L9">        this.diameter = diameter;</span>
 <span class="fc" id="L10">    }</span>
 
@@ -13,16 +13,20 @@ public class Pancake {
 <span class="fc" id="L13">        return diameter;</span>
     }
 
+    /**
+     * @param toBeComparedPancake
+     * @return 1 if tobeComparedPancake is bigger than the current diameter, -1 if to beComparedPancake is smaller than the current diameter
+     */
     public double compareTo(Pancake toBeComparedPancake){
-<span class="fc" id="L17">        return Double.compare(toBeComparedPancake.getDiameter(), this.diameter);</span>
+<span class="fc" id="L21">        return Double.compare(toBeComparedPancake.getDiameter(), this.diameter);</span>
     }
-    public void setDiameter(double diameter) {
-<span class="nc" id="L20">        this.diameter = diameter;</span>
-<span class="nc" id="L21">    }</span>
+    public void setDiameter(int diameter) {
+<span class="nc" id="L24">        this.diameter = diameter;</span>
+<span class="nc" id="L25">    }</span>
 
     @Override
     public String toString() {
-<span class="fc" id="L25">        return String.format(&quot;Pancake: %.1f diameter&quot;, diameter);</span>
+<span class="fc" id="L29">        return String.format(&quot;Pancake: %d diameter&quot;, diameter);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

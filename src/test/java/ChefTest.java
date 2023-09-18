@@ -32,14 +32,26 @@ public class ChefTest {
     @Test
     void onlyChefCanBakePancakes(){
         assertThrows(ChefRoleException.class, () ->{
-            chef2.bake();
+            chef2.bake(1);
         });
     }
 
     @Test
     void bakingPancakesShouldHaveUniqueDiameters() throws ChefRoleException {
-        pancakes = chef1.bake();
+        pancakes = chef1.bake(5);
         assertTrue(arePancakeUnique(pancakes), "Pancakes are unique");
+    }
+    @Test
+    void cannotBakeLessThan1Pancake() {
+        assertThrows(IllegalArgumentException.class, () ->{
+            chef2.bake(0);
+        });
+    }
+    @Test
+    void cannotBakeMoreThan25Pancakes(){
+        assertThrows(IllegalArgumentException.class, () ->{
+            chef2.bake(26);
+        });
     }
 
     @Test

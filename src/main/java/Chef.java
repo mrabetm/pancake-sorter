@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * This class represents a chef
  */
 public class Chef {
-    private final int MAXIMUM_AMOUNT_OF_PANCAKES_BAKED = 25;
+//    private final int MAXIMUM_AMOUNT_OF_PANCAKES_BAKED = 25;
     private final int MIN_RADIUS = 1;
     private final int MAX_RADIUS = 50;
 
@@ -29,17 +29,20 @@ public class Chef {
      * @throws ChefRoleException
      * This method retuns a plate filled with pancakes with different diameters
      */
-    public List<Pancake> bake() throws ChefRoleException{
+    public List<Pancake> bake(int orderAmount) throws ChefRoleException{
+        if (orderAmount >= 1 && orderAmount <= 25){
             if (!isSousChef){
                 List<Pancake> plate = new ArrayList<>();
                 ThreadLocalRandom.current().ints(MIN_RADIUS, MAX_RADIUS)
-                        .distinct().limit(MAXIMUM_AMOUNT_OF_PANCAKES_BAKED)
+                        .distinct().limit(orderAmount)
                         .forEach(randomRadius -> {
                             plate.add(new Pancake(randomRadius));
                         });
                 return plate;
             }
             throw new ChefRoleException(isSousChef);
+        }
+        throw new IllegalArgumentException("invalid amount");
     }
     /**
      * @param plate
