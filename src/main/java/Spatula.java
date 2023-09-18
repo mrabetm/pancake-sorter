@@ -13,7 +13,6 @@ public class Spatula {
     public Spatula(Chef chef) {
         this.chef = chef;
     }
-
     /**
      * @param pancakeStack
      * @param currentIndex

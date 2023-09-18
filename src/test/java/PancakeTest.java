@@ -9,8 +9,8 @@ public class PancakeTest {
 
     @BeforeEach
     void setup(){
-        pancake1 = new Pancake(5.06);
-        pancake2 = new Pancake(2.0);
+        pancake1 = new Pancake(5);
+        pancake2 = new Pancake(2);
     }
     @Test
     void compareSmallPancakeToLargePancakeGives1(){

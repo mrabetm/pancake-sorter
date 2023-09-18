@@ -3,9 +3,9 @@
  * This class represents a pancake
  */
 public class Pancake {
-    private double diameter;
+    private int diameter;
 
-    public Pancake(double diameter) {
+    public Pancake(int diameter) {
         this.diameter = diameter;
     }
 
@@ -13,10 +13,14 @@ public class Pancake {
         return diameter;
     }
 
+    /**
+     * @param toBeComparedPancake
+     * @return 1 if tobeComparedPancake is bigger than the current diameter, -1 if to beComparedPancake is smaller than the current diameter
+     */
     public double compareTo(Pancake toBeComparedPancake){
         return Double.compare(toBeComparedPancake.getDiameter(), this.diameter);
     }
-    public void setDiameter(double diameter) {
+    public void setDiameter(int diameter) {
         this.diameter = diameter;
     }
 

@@ -21,12 +21,12 @@ public class ChefTest {
        chef2 = new Chef("Maron",true);
 
         pancakes = new ArrayList<>();
-        pancakes.add(new Pancake(5.0));
-        pancakes.add(new Pancake(6.0));
-        pancakes.add(new Pancake(10.0));
-        pancakes.add(new Pancake(15.0));
-        pancakes.add(new Pancake(4.0));
-        pancakes.add(new Pancake(3.0));
+        pancakes.add(new Pancake(5));
+        pancakes.add(new Pancake(6));
+        pancakes.add(new Pancake(10));
+        pancakes.add(new Pancake(15));
+        pancakes.add(new Pancake(4));
+        pancakes.add(new Pancake(3));
     }
 
     @Test
@@ -37,11 +37,9 @@ public class ChefTest {
     }
 
     @Test
-    void bakingProcessShouldGoCorrectly() throws ChefRoleException {
+    void bakingPancakesShouldHaveUniqueDiameters() throws ChefRoleException {
         pancakes = chef1.bake();
         assertTrue(arePancakeUnique(pancakes), "Pancakes are unique");
-        chef2.sort(pancakes);
-
     }
 
     @Test
