@@ -26,6 +26,6 @@ public class Pancake {
 
     @Override
     public String toString() {
-        return String.format("Pancake: %.1f diameter", diameter);
+        return String.format("Pancake: %d diameter", diameter);
     }
 }

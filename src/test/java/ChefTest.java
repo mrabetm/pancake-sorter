@@ -44,12 +44,12 @@ public class ChefTest {
 
     @Test
     void pancakeSorterShouldGiveCorrectOutput() throws ChefRoleException {
-        assertEquals("[Pancake: 15,0 diameter, " +
-                "Pancake: 10,0 diameter, " +
-                "Pancake: 6,0 diameter, " +
-                "Pancake: 5,0 diameter, " +
-                "Pancake: 4,0 diameter, " +
-                "Pancake: 3,0 diameter]", chef2.sort(pancakes));
+        assertEquals("[Pancake: 15 diameter, " +
+                "Pancake: 10 diameter, " +
+                "Pancake: 6 diameter, " +
+                "Pancake: 5 diameter, " +
+                "Pancake: 4 diameter, " +
+                "Pancake: 3 diameter]", chef2.sortPancakes(pancakes));
     }
 
     private boolean arePancakeUnique(List<Pancake> pancakes){

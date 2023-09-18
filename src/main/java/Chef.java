@@ -45,7 +45,7 @@ public class Chef {
      * @param plate
      * @return the plate sorted from biggest to smallest pancake through pancake sorting
      */
-    public String sort(List<Pancake> plate) throws ChefRoleException{
+    public String sortPancakes(List<Pancake> plate) throws ChefRoleException{
         if (this.isSousChef){
             Spatula spatula = new Spatula(this);
             for (int i = plate.size(); i > 1; i--){
@@ -56,7 +56,6 @@ public class Chef {
                     spatula.flipPancakes(plate, i - 1);
                 }
             }
-            System.out.println(plate);
             return plate.toString();
         }
         throw new ChefRoleException(!this.isSousChef);
