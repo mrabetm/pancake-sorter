@@ -20,7 +20,13 @@ public class ChefTest {
        chef1 = new Chef("Gerard",false);
        chef2 = new Chef("Maron",true);
 
-       pancakes = new ArrayList<>();
+        pancakes = new ArrayList<>();
+        pancakes.add(new Pancake(5.0));
+        pancakes.add(new Pancake(6.0));
+        pancakes.add(new Pancake(10.0));
+        pancakes.add(new Pancake(15.0));
+        pancakes.add(new Pancake(4.0));
+        pancakes.add(new Pancake(3.0));
     }
 
     @Test
@@ -35,6 +41,7 @@ public class ChefTest {
         pancakes = chef1.bake();
         assertTrue(arePancakeUnique(pancakes), "Pancakes are unique");
         chef2.sort(pancakes);
+
     }
 
     @Test

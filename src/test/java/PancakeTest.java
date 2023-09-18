@@ -13,7 +13,7 @@ public class PancakeTest {
         pancake2 = new Pancake(2.0);
     }
     @Test
-    void compareToTest(){
-        assertEquals(1, pancake1.compareTo(pancake2));
+    void compareSmallPancakeToLargePancakeGives1(){
+        assertEquals(1, pancake2.compareTo(pancake1));
     }
 }

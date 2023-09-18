@@ -31,7 +31,6 @@ public class Chef {
                         .forEach(randomRadius -> {
                             plate.add(new Pancake(randomRadius));
                         });
-                System.out.println(plate);
                 return plate;
             }
             throw new ChefRoleException(isSousChef);
