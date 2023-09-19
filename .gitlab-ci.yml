@@ -7,10 +7,14 @@ stages:
   - deploy
 build_job:
   stage: build
+  tags:
+    - hva
   script:
     - mvn compile
 
 
 test_job:
   stage: test
+  tags:
+    - hva
   script: mvn clean test
