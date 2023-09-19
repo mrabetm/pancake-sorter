@@ -1,0 +1,16 @@
+image : maven
+
+stages:
+  - build
+  - test
+  - trigger
+  - deploy
+build_job:
+  stage: build
+  script:
+    - mvn compile
+
+
+test_job:
+  stage: test
+  script: mvn clean test

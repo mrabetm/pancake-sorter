@@ -1,0 +1,20 @@
+
+J
+java:S5411""(Use a primitive boolean expression here.(½˜ı¸úÿÿÿÿ8—ÙÉÈª1
+>
+java:S54114"(Use a primitive boolean expression here.(î‰€
+o	java:S116"URename this field "MIN_RADIUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶§´Ìÿÿÿÿÿ
+o	java:S116"URename this field "MAX_RADIUS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óèİ©üÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(¶§´Ìÿÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(Óèİ©üÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(¶şÓüÿÿÿÿ
+N
+java:S1602&",Remove useless curly braces around statement(ÚÖİÃùÿÿÿÿ8±ÙÉÈª1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8×ŸÔÈª1
+O
+java:S1128"-Remove this unused import 'java.util.Random'.(èøÉ›ùÿÿÿÿ8×ŸÔÈª1
+>
+java:S1068"(Remove this unused "name" private field.(Ë¥¼

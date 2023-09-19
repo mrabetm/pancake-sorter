@@ -1,6 +1,0 @@
-projectKey=Pancake-sorting3
-serverUrl=http://localhost:9000
-serverVersion=10.2.0.77647
-dashboardUrl=http://localhost:9000/dashboard?id=Pancake-sorting3
-ceTaskId=AYqpD6fDyH1qvdAIGnLR
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYqpD6fDyH1qvdAIGnLR
