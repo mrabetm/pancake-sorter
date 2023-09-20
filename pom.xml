@@ -45,8 +45,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <sonar.projectKey>CICD_project-2</sonar.projectKey>
-        <sonar.projectName>CICD_project 2</sonar.projectName>
+        <sonar.projectKey>se-specialization-2023-1_tse3_mortada-mrabet_pancake-testing_AYqyY70Ezi8lsBl-ht6c</sonar.projectKey>
+        <sonar.projectName>Pancake Testing</sonar.projectName>
         <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     </properties>
 

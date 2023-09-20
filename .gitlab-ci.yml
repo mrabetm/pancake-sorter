@@ -22,7 +22,6 @@ test_job:
 
 sonarqube-check:
   stage: sonarqube-check
-  image: maven:3-eclipse-temurin-17
   tags:
     - hva
   variables:
@@ -40,12 +39,13 @@ sonarqube-check:
     - master
     - main
     - develop
+
 sonarqube-vulnerability-report:
   stage: sonarqube-vulnerability-report
   tags:
     - hva
   script:
-    - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=CICD_project-2&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
+    - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=se-specialization-2023-1_tse3_mortada-mrabet_pancake-testing_AYqyY70Ezi8lsBl-ht6c&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
   allow_failure: true
   only:
     - merge_requests
@@ -57,6 +57,6 @@ sonarqube-vulnerability-report:
     reports:
       sast: gl-sast-sonar-report.json
   dependencies:
-    - sonarqube-check
+    - sonarqube-check    - sonarqube-check
 #deploy_job:
 #  stage: deploy
