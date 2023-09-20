@@ -45,7 +45,7 @@ sonarqube-vulnerability-report:
   tags:
     - hva
   script:
-    - 'curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=se-specialization-2023-1_tse3_mortada-mrabet_pancake-testing_AYqyY70Ezi8lsBl-ht6c&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json'
+    - curl -u "${SONAR_TOKEN}:" "${SONAR_HOST_URL}/api/issues/gitlab_sast_export?projectKey=se-specialization-2023-1_tse3_mortada-mrabet_pancake-testing_AYqyY70Ezi8lsBl-ht6c&branch=${CI_COMMIT_BRANCH}&pullRequest=${CI_MERGE_REQUEST_IID}" -o gl-sast-sonar-report.json
   allow_failure: true
   only:
     - merge_requests
