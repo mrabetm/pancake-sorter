@@ -44,6 +44,10 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+        <sonar.projectKey>CICD_project-2</sonar.projectKey>
+        <sonar.projectName>CICD_project 2</sonar.projectName>
+        <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     </properties>
 
     
