@@ -57,6 +57,6 @@ sonarqube-vulnerability-report:
     reports:
       sast: gl-sast-sonar-report.json
   dependencies:
-    - sonarqube-check    - sonarqube-check
+    - sonarqube-check
 #deploy_job:
 #  stage: deploy
