@@ -49,6 +49,9 @@ sonarqube-check:
 
 deploy_job:
   stage: deploy
+  needs: ["sonarqube-check"]
+  tags:
+    - hva
   only:
     - main
   script:
