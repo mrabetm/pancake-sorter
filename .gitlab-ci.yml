@@ -20,11 +20,11 @@ test_job:
     - hva
   script: mvn clean test
 
-  trigger:
-    stage: trigger
-    needs: []
-    script:
-      -
+#  trigger:
+#    stage: trigger
+#    needs: []
+#    script:
+#      -
 
 sonarqube-check:
   stage: sonarqube-check
@@ -52,4 +52,4 @@ deploy_job:
   only:
     - master
   script:
-    - git branch -
+    - git push heroku main
