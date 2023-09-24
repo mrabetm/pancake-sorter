@@ -6,6 +6,7 @@ stages:
   - trigger
   - deploy
   - sonarqube-check
+
 build_job:
   stage: build
   tags:
@@ -49,7 +50,9 @@ sonarqube-check:
 
 deploy_job:
   stage: deploy
-  needs: ["test-job"]
+  needs:
+    - job: sonarqube-check
+      artifacts: true
   tags:
     - hva
   only:
