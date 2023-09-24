@@ -50,6 +50,7 @@ sonarqube-check:
 
 deploy_job:
   stage: deploy
+  needs: ["test_job"]
   tags:
     - hva
   only:
