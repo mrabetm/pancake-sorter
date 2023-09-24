@@ -15,9 +15,16 @@ build_job:
 
 test_job:
   stage: test
+  needs: ["build_job"]
   tags:
     - hva
   script: mvn clean test
+
+  trigger:
+    stage: trigger
+    needs: []
+    script:
+      -
 
 sonarqube-check:
   stage: sonarqube-check
@@ -39,5 +46,10 @@ sonarqube-check:
     - master
     - main
     - develop
-#deploy_job:
-#  stage: deploy
+
+deploy_job:
+  stage: deploy
+  only:
+    - master
+  script:
+    - git branch -
