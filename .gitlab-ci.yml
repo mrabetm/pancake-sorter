@@ -57,7 +57,8 @@ deploy_job:
     - main
     - master
   script:
-    - git branch -D deploy
-    - git remote rm pancake-sorting
+    - git checkout -b deploy
     - git remote add pancake-sorting https://git.heroku.com/pancake-sorting.git
     - git push --force pancake-sorting:master
+    - git remote rm pancake-sorting
+    - git branch -D deploy
