@@ -50,9 +50,6 @@ sonarqube-check:
 
 deploy_job:
   stage: deploy
-  needs:
-    - job: sonarqube-check
-      artifacts: true
   tags:
     - hva
   only:
