@@ -50,14 +50,15 @@ sonarqube-check:
 
 deploy_job:
   stage: deploy
-  needs: ["sonarqube-check"]
+  needs: ["test_job"]
   tags:
     - hva
   only:
     - main
     - master
   script:
-    - git branch -D deploy
+    - git checkout -b deploy
     - git remote rm pancake-sorting
     - git remote add pancake-sorting
     - git push --force pancake-sorting:master
+    - git branch -D deploy
