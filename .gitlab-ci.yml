@@ -62,6 +62,8 @@ deploy_staging_job:
 deploy_production_job:
   stage: deploy_production
   image: ruby:latest
+  needs:
+    - deploy_staging_job
   tags:
     - hva
   script:
