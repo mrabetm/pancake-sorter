@@ -40,7 +40,6 @@ sonarqube-check:
   script:
     - mvn verify sonar:sonar -Dsonar.qualitygate.wait=true
   allow_failure: true
-
   only:
     - merge_requests
     - master
@@ -50,6 +49,8 @@ sonarqube-check:
 deploy_staging_job:
   stage: deploy_staging
   image: ruby:latest
+  tags:
+    - hva
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
@@ -61,6 +62,8 @@ deploy_staging_job:
 deploy_production_job:
   stage: deploy_production
   image: ruby:latest
+  tags:
+    - hva
   script:
     - apt-get update -qy
     - apt-get install -y ruby-dev
