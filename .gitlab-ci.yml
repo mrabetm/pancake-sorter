@@ -20,6 +20,8 @@ test_job:
   tags:
     - hva
   script: mvn clean test
+  variables:
+    CRON: "*/2 * * * *"
 
 #  trigger:
 #    stage: trigger
