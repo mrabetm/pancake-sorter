@@ -3,8 +3,8 @@ image: maven
 stages:
   - build
   - test
-  - trigger
-  - deploy
+  - deploy_staging
+  - deploy_production
   - sonarqube-check
 
 build_job:
@@ -21,15 +21,10 @@ test_job:
   needs: ["build_job"]
   tags:
     - hva
-  script: mvn clean test
+  script:
+  - mvn clean test
   variables:
     CRON: "*/2 * * * *"
-
-#  trigger:
-#    stage: trigger
-#    needs: []
-#    script:
-#      -
 
 sonarqube-check:
   stage: sonarqube-check
@@ -52,17 +47,24 @@ sonarqube-check:
     - main
     - develop
 
-#deploy_job:
-#  stage: deploy
-#  needs: ["test_job"]
-#  tags:
-#    - hva
-#  only:
-#    - main
-#    - master
-#  script:
-#    - git checkout -b deploy
-#    - git remote add pancake-sorting https://git.heroku.com/pancake-sorting.git
-#    - git push --force pancake-sorting:master
-#    - git remote rm pancake-sorting
-#    - git branch -D deploy
+deploy_staging_job:
+  stage: deploy_staging
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=pancake-sorting-staging --api-key=$HEROKU_API_KEY
+  dependencies:
+    - sonarqube-check
+
+deploy_production_job:
+  stage: deploy_production
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=pancake-sorting-production --api-key=$HEROKU_API_KEY
+  dependencies:
+    - sonarqube-check
