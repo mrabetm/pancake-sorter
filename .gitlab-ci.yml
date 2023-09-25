@@ -64,6 +64,7 @@ deploy_production_job:
   image: ruby:latest
   needs:
     - deploy_staging_job
+    - sonarqube-check
   tags:
     - hva
   script:
@@ -71,5 +72,3 @@ deploy_production_job:
     - apt-get install -y ruby-dev
     - gem install dpl
     - dpl --provider=heroku --app=pancake-sorting-production --api-key=$HEROKU_API_KEY
-  dependencies:
-    - sonarqube-check
