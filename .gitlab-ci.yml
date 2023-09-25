@@ -3,9 +3,9 @@ image: maven
 stages:
   - build
   - test
+  - sonarqube-check
   - deploy_staging
   - deploy_production
-  - sonarqube-check
 
 build_job:
   stage: build
